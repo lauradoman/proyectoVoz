@@ -1,6 +1,6 @@
 from comandos.buscar import buscar  # Si tienes un comando de búsqueda
 from comandos.salir import salir_comando  # Si tienes un comando de salir
-from utils.estado import set_escuchar
+from comandos.reproducir import abrir_video_youtube
 import inspect
 
 def ejecutar_comando(comando):
@@ -13,7 +13,8 @@ def ejecutar_comando(comando):
         "buscar": buscar_comando,  # Función que recibe argumento
         "salir": salir_comando,    # Función que no recibe argumento
         "no gracias": salir_comando,  # Función que no recibe argumento
-    }
+        "reproduce" : abrir_video_youtube,    
+        }
 
     # Recorre el diccionario para encontrar el comando y ejecutarlo
     for clave, funcion in comandos.items():
